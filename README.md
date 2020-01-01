@@ -1,5 +1,5 @@
 # Machine-Learning Progress
-Overview of various machine learning projects
+Overview of various machine learning projects using Python.
 
 # Project A: Predicting Customer Churn
 Project board: https://github.com/theonlyduck/Machine-Learning/projects/1
