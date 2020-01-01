@@ -1,0 +1,103 @@
+##Based on: https://academy.vertabelo.com/blog/python-customer-churn-prediction/
+
+##Step 1: Importing the Libraries
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+##Step 2: Loading the Dataset
+
+url = 'https://raw.githubusercontent.com/theonlyduck/customer_churn/master/Bank_Customer_Churn_Modelling.csv?token=AODHCCVHDK5N7BUAMNVQNIK6BIIF2'
+customer_data = pd.read_csv(url)
+# Dataset is now stored in a Pandas Dataframe
+
+print (customer_data.shape)
+#customer_data.dtypes
+
+# Load data
+customer_data.head(3)
+
+#check types of data
+customer_data.dtypes
+
+##Step 3. Analysing Data
+
+#dexcriptive analysis of data
+customer_data.describe()
+
+##Get a list of categorial variables
+categorial_variables=customer_data.dtypes.loc[customer_data.dtypes=='object'].index
+print(categorial_variables)
+
+##determine unique values of categorial variables
+customer_data[categorial_variables].apply(lambda x: len(x.unique()))
+
+##Analyzing "Geography"
+customer_data['Geography'].value_counts()
+customer_data['Geography'].value_counts()/customer_data.shape[0]
+
+##Visualizing customer churn
+y = customer_data["Exited"].value_counts()
+#print (y)
+sns.barplot(y.index, y.values)
+
+#calculate percentage of customer churn
+y_True = customer_data["Exited"][customer_data["Exited"] == True]
+print ("Exited Percentage = "+str( (y_True.shape[0] / customer_data["Exited"].shape[0]) * 100 ))
+
+##Step 4: Discard non required data
+
+#display column headers
+columns = customer_data.columns.values.tolist()
+print(columns)
+
+##remove columns we don't need and change name to dataset
+dataset = customer_data.drop(['RowNumber', 'CustomerId', 'Surname'], axis=1)
+
+##Step 5: Converting Categorical Columns to Numeric Columns
+
+##Iisolate columns "Geography" and "Gender" from dataset
+dataset =  dataset.drop(['Geography', 'Gender'], axis=1)
+
+##Convert both the Geography and Gender columns into numeric columns
+Geography = pd.get_dummies(customer_data.Geography).iloc[:,1:]
+Gender = pd.get_dummies(customer_data.Gender).iloc[:,1:]
+
+##Add the Geography and Gender data frames back to the data set to create the final dataset. 
+dataset = pd.concat([dataset,Geography,Gender], axis=1)
+
+#show dataset
+dataset.head(3)
+
+#check types of data
+dataset.dtypes
+
+##Step 6: Training and evaluating algorithm
+
+##Isolate the variable that will be predicted from the dataset
+X =  dataset.drop(['Exited'], axis=1)
+y = dataset['Exited']
+
+##Import algorithm library and divide data into training and test set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators=200, random_state=0)  
+classifier.fit(X_train, y_train)  
+predictions = classifier.predict(X_test)
+
+##Evaluating how the algorithm performs
+from sklearn.metrics import classification_report, accuracy_score
+print(classification_report(y_test,predictions ))  
+print(accuracy_score(y_test, predictions ))
+
+##The results indicate an accuracy of 86.35%, which means that the algorithm successfully predicts customer churn 86.35% of the time
+
+##Step 7: Feature Evaluation
+
+##creating a bar chart that visualizes which features are the most important to predict customer churn
+feat_importances = pd.Series(classifier.feature_importances_, index=X.columns)
+feat_importances.nlargest(10).plot(kind='barh')
