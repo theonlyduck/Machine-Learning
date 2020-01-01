@@ -1,5 +1,5 @@
 # Machine-Learning Progress
-Overview of various machine learning projects using Python.
+This is an overview of various machine learning projects I did using Python and my overall progress with mastering the technology.
 
 # Understanding the basics of machine learning
 https://machinelearningmastery.com/start-here/
