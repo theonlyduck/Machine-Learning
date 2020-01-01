@@ -10,7 +10,7 @@ A list of blog posts introducing readers to ML:
 - [Overview of ML algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
 
 # Project A: Predicting Customer Churn
-My first functional ML project
+My first functional ML project. The objective of this project is to gain an understanding and the implementation of various steps to predict bank customer churn with Python:
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/1)
 - [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/customer-churn)
 
