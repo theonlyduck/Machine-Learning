@@ -16,8 +16,8 @@ My first functional ML project which is based on an online tutorial. The objecti
 
 # Project B: Understanding Data Visualization via Pandas
 After finishing the first project on ML I had the feeling that I needed a deeper understanding of how to visualize data properly. That's what this project is about - playing around with different kinds of charts and figuring out how to use Python's Pandas library:
-- dsfs
--sgsd
+- [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/2)
+- Code
 
 # Project C: 
 With this project I wanted to better understand how to implement, test, and evaluate **multiple algorithms** at the same time.
