@@ -20,4 +20,4 @@ After finishing the first project on ML I realized that I needed a deeper unders
 - [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_B_Data_Visualization_Pandas)
 
 # Project C: 
-With this project I wanted to better understand how to implement, test, and evaluate **multiple algorithms** at the same time.
+Through this project I learned how to implement, test, and evaluate **multiple ML algorithms** at the same time.
