@@ -15,7 +15,7 @@ My first functional ML project which is based on an online tutorial. The objecti
 - [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/customer-churn)
 
 # Project B: Understanding Data Visualization via Pandas
-After finishing the first project on ML I had the feeling that I needed a deeper understanding of how to visualize data properly. That's what this project is about - playing around with different kinds of charts and figuring out how to use Python's Pandas library:
+After finishing the first project on ML I realized that I needed a deeper understanding of how to visualize data properly. That's what this project is about - playing around with different kinds of charts and figuring out how to use Python's Pandas library:
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/2)
 - [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_B_Data_Visualization_Pandas)
 
