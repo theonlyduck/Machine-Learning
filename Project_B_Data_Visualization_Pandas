@@ -1,0 +1,127 @@
+# importing libraries
+import sys
+import scipy
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import pandas as pd
+import sklearn
+import seaborn as sns
+
+# Load CSV using Pandas from URL
+import pandas
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = pandas.read_csv(url, names=names)
+print(data.shape)
+
+#checking data types
+data.dtypes
+
+# statistical Summary
+data.describe()
+
+# Load data
+data.head(5)
+
+#show correlation between different features
+corr = data.corr()
+sns.heatmap(corr, xticklabels=corr.columns.values, yticklabels=corr.columns.values, annot = True, annot_kws={'size':12})
+heat_map=plt.gcf()
+heat_map.set_size_inches(15,10)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+plt.show()
+
+# Show data as scatter matrix plot, histograms shown as density plots
+import matplotlib.pyplot as plt
+import pandas
+from pandas.plotting import scatter_matrix
+scatter_matrix(data,figsize=(15,10), diagonal='density')
+plt.show()
+
+# show histogram matrix
+data.hist(figsize=(10,10))
+
+#show histogram of "age", with more details (bins)
+color_hist_1 = {'DarkOrange'}
+data.iloc[:,7].plot.hist(color=color_hist_1,figsize=(10,5),bins=30)
+
+#show histogram of columns 5-9, overlapping with transparency
+color_hist_2 = {'DarkOrange','Peachpuff','Indigo','Olivedrab'}
+data.iloc[:,5:9].plot.hist(color=color_hist_2,alpha=0.5,figsize=(10,5),bins=20)
+
+#showing histograms of rows 10-50 of columns 5-9, stacked, with 
+color_hist_2 = {'DarkOrange','Peachpuff','Indigo','Olivedrab'}
+data.iloc[10:50,5:9].plot.hist(stacked=True,color=color_hist_2,figsize=(10,5),bins=20)
+
+# Single selections using iloc and DataFrame
+# Rows:
+#data.iloc[0] # first row of data frame (Aleshia Tomkiewicz) - Note a Series data type output.
+#data.iloc[1] # second row of data frame (Evan Zigomalas)
+#data.iloc[-1] # last row of data frame (Mi Richan)
+# Columns:
+#data.iloc[:,0] # first column of data frame (first_name)
+#data.iloc[:,1] # second column of data frame (last_name)
+#data.iloc[:,-1] # last column of data frame (id)
+
+#show rows 15-54
+data.iloc[15:54].plot(figsize=(10,10))
+
+#show rows 15-54 as subplots
+data.iloc[15:54].plot(subplots=True,figsize=(10,10))
+
+color_plot_bar = {'DarkRed','Yellow','Navy','Hotpink','Sandybrown','Cadetblue','Crimson','Plum','Forestgreen'}
+data.iloc[50].plot.bar(color=color_plot_bar)
+
+# show rows 5-7
+data.iloc[4:7].plot.bar(figsize=(10,5))
+
+#show first 2 rows stacked
+data.iloc[0:2].plot.bar(stacked=True, figsize=(10,5))
+
+#show first 10 rows of columns 4-6 as stacked bar chart
+data.iloc[0:10, 3:6].plot.bar(stacked=True,figsize=(10,5))
+
+color_plot_barh = {'Teal','Pink'}
+data.iloc[50].plot.barh(color=color_plot_barh)
+
+#show column 7 ("age") as plot box
+color_plot_box = {'boxes': 'DarkGreen', 'whiskers': 'DarkOrange',
+               'medians': 'DarkBlue', 'caps': 'Gray'}
+data.iloc[:,7].plot.box(color=color_plot_box,figsize=(10,5))
+
+# show area plot of rows 50-55 (stacked by default)
+data.iloc[50:55].plot.area()
+
+# show area plot of rows 50-55
+data.iloc[50:55].plot.area(stacked=False)
+
+#show density or kde plot
+color_plot_density = {'Magenta'}
+data.iloc[:,7].plot.density(color=color_plot_density)
+
+#show line plot
+color_plot_line = {'Brown'}
+data.iloc[50].plot.line(color=color_plot_line)
+
+#show scatter plot
+color_plot_scatter = {'Khaki'}
+data.plot.scatter(x="age",y="skin",color=color_plot_scatter,figsize=(10,5))
+
+#show hexbin plot
+data.plot.hexbin(x="age",y="plas",gridsize=20,figsize=(10,5))
+
+#show pie plot
+color_plot_pie = {'Deepskyblue','Firebrick','Dimgray','Wheat','Powderblue','Orchid','Aqua','Peru','Greenyellow'}
+data.iloc[51].plot.pie(colors=color_plot_pie)
+
+#show andrew curves
+from pandas.plotting import andrews_curves
+plt.figure(figsize=(10,10))
+andrews_curves(data,'class')
+
+#show RadViz
+from pandas.plotting import radviz
+plt.figure()
+radviz(data,'class')
