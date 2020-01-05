@@ -86,6 +86,11 @@ data.iloc[0:10, 3:6].plot.bar(stacked=True,figsize=(10,5))
 color_plot_barh = {'Teal','Pink'}
 data.iloc[50].plot.barh(color=color_plot_barh)
 
+#show plot box with subplots, 3x3 layout
+color_plot_box = {'boxes': 'DarkGreen', 'whiskers': 'DarkOrange',
+               'medians': 'DarkBlue', 'caps': 'Gray'}
+data.plot.box(subplots=True,layout=(3,3),color=color_plot_box,figsize=(10,10))
+
 #show column 7 ("age") as plot box
 color_plot_box = {'boxes': 'DarkGreen', 'whiskers': 'DarkOrange',
                'medians': 'DarkBlue', 'caps': 'Gray'}
@@ -96,6 +101,9 @@ data.iloc[50:55].plot.area()
 
 # show area plot of rows 50-55
 data.iloc[50:55].plot.area(stacked=False)
+
+#show as density or kde plot, with subplots, 3x3 layout, subplots do not share x-axis
+data.plot.density(subplots=True, layout=(3,3), figsize=(10,10), sharex=False)
 
 #show density or kde plot
 color_plot_density = {'Magenta'}
