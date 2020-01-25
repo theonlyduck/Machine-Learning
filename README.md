@@ -22,6 +22,7 @@ After finishing the first project on ML I realized that I needed a deeper unders
 # Project C: Applying Logistic Regression and Random Forest in Python
 In this project I applied **Logistic Regression** and **Random Forest** models for ML to predict outcomes with Machine Learning. In this case, I successfully predicted **XYZ**
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/3)
+- [Code fpr Random Forest model on Github](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Random_Forest_preciction)
 
 # Project D: 
 Through this project I learned how to implement, test, and evaluate **multiple ML algorithms** at the same time.
