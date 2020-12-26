@@ -21,7 +21,7 @@ My first functional ML project which is based on an online tutorial. The objecti
 # Project B: Understanding Data Visualization via Pandas
 After finishing the first project on ML I realized that I needed a deeper understanding of how to **visualize data** properly. That's what this project is about - creating various kinds of charts and figuring out how to use the different functions of **Python's Pandas** library:
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/2)
-- [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_B_Data_Visualization_Pandas)
+- [Code for Data Visualisation](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_B_Data_Visualization_Pandas)
 
 # Project C: Applying Logistic Regression and Random Forest in Python
 In this project I applied **Logistic Regression** and **Random Forest** models for ML to predict outcomes with Machine Learning. In this case, I created two codes for entering training data manually and for reading training data out of a URL. After training the system was able to (somewhat) accurately **predicted outcomes**.
