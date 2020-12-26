@@ -31,3 +31,4 @@ In this project I applied **Logistic Regression** and **Random Forest** models f
 
 # Project D: 
 Through this project I learned how to implement, test, and evaluate **multiple ML algorithms** at the same time.
+- [Example for use of different ML algorithms](https://www.kaggle.com/imchentouf/mbti-type-and-digital-footprints-for-reddit-users)
