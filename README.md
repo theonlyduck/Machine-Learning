@@ -12,7 +12,7 @@ A list of blog posts introducing readers to ML:
 # Project A: Predicting Customer Churn
 My first functional ML project which is based on an online tutorial. The objective of this project was to gain an understanding and the implementation of various basics steps to **predict bank customer churn** with Python (loading libraries, read data, analyze data, train algorithm, predict important features):
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/1)
-- [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/customer-churn)
+- [Code for Customer Churn Prediction](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_A_customer-churn_code)
 
 # Project B: Understanding Data Visualization via Pandas
 After finishing the first project on ML I realized that I needed a deeper understanding of how to **visualize data** properly. That's what this project is about - creating various kinds of charts and figuring out how to use the different functions of **Python's Pandas** library:
@@ -23,7 +23,7 @@ After finishing the first project on ML I realized that I needed a deeper unders
 In this project I applied **Logistic Regression** and **Random Forest** models for ML to predict outcomes with Machine Learning. In this case, I created two codes for entering training data manually and for reading training data out of a URL. After training the system was able to (somewhat) accurately **predicted outcomes**.
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/3)
 - [Code for Random Forest model on Github (enter data)](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Random_Forest_preciction)
-- [Code for Random Firest model on Github (read URL)](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Randon_Forest_prediction_2) 
+- [Code for Random Forest model on Github (read URL)](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Randon_Forest_prediction_2) 
 
 # Project D: 
 Through this project I learned how to implement, test, and evaluate **multiple ML algorithms** at the same time.
