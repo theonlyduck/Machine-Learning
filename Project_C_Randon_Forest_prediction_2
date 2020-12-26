@@ -1,0 +1,71 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import metrics
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load CSV using Pandas from URL
+import pandas
+url = "https://raw.githubusercontent.com/theonlyduck/Machine-Learning/master/des_moines.csv"
+###names = ['Preis','Schlafzimmer','Bäder','Größe']
+data = pandas.read_csv(url)
+print(data.shape)
+
+# drop null values
+data = data.dropna()
+
+#Analysis of data
+data.describe()
+
+# Load data
+data.head(4)
+
+#checking data types
+data.dtypes
+
+# convert data into numeric
+data["Preis"] = pd.to_numeric(data.Preis, errors='coerce')
+data["Schlafzimmer"] = pd.to_numeric(data.Schlafzimmer, errors='coerce')
+data["Bäder"] = pd.to_numeric(data.Bäder, errors='coerce')
+data["Größe"] = pd.to_numeric(data.Größe, errors='coerce')
+
+#show correlation between different features
+corr = data.corr()
+sns.heatmap(corr, xticklabels=corr.columns.values, yticklabels=corr.columns.values, annot = True, annot_kws={'size':12})
+heat_map=plt.gcf()
+heat_map.set_size_inches(15,7)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+plt.show()
+
+# Show data as scatter matrix plot, histograms shown as density plots
+import matplotlib.pyplot as plt
+import pandas
+from pandas.plotting import scatter_matrix
+scatter_matrix(data,figsize=(15,10), diagonal='density')
+plt.show()
+
+# show histogram matrix
+data.hist(figsize=(10,10))
+
+df = pd.DataFrame(data,columns= ['Preis','Schlafzimmer','Bäder','Größe'])
+##print (df)
+
+X = df[['Preis','Bäder','Größe']]
+y = df['Schlafzimmer']
+
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=0)
+
+classifier = RandomForestClassifier(n_estimators=100)
+classifier.fit(X_train,y_train)
+y_pred = classifier.predict(X_test)
+
+print('Accuracy: ',metrics.accuracy_score(y_test, y_pred))
+
+feat_importances = pd.Series(classifier.feature_importances_, index=X.columns)
+feat_importances.nlargest(10).plot(kind='barh')
+
+#Make prediciton of price by entering other house data (Schlafzimmer etc)
+prediction = classifier.predict([[200000,1,985]])
+print ('Predicted Result: ', prediction)
