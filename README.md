@@ -1,6 +1,10 @@
 # Machine-Learning and Data Science Progress
 This is an overview of various machine learning projects I did using Python and my overall progress with mastering the technology.
 
+# Tools
+- [Datasets for Machine Learning and Data Science](https://www.kaggle.com/datasets) Added to most datasets there a notebooks by other users of which some are very good.
+- [Online Notebook used for Machine Learning](https://colab.research.google.com/)
+
 # Understanding the basics of machine learning
 A list of blog posts introducing readers to ML:
 - [How to build a ML-portfolio on Github](https://machinelearningmastery.com/build-a-machine-learning-portfolio/)
