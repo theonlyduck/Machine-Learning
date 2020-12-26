@@ -20,9 +20,10 @@ After finishing the first project on ML I realized that I needed a deeper unders
 - [Code](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_B_Data_Visualization_Pandas)
 
 # Project C: Applying Logistic Regression and Random Forest in Python
-In this project I applied **Logistic Regression** and **Random Forest** models for ML to predict outcomes with Machine Learning. In this case, I successfully predicted **XYZ**
+In this project I applied **Logistic Regression** and **Random Forest** models for ML to predict outcomes with Machine Learning. In this case, I created two codes for entering training data manually and for reading training data out of a URL. After training the system was able to (somewhat) accurately **predicted outcomes**.
 - [Project board on Github](https://github.com/theonlyduck/Machine-Learning/projects/3)
-- [Code for Random Forest model on Github](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Random_Forest_preciction)
+- [Code for Random Forest model on Github (enter data)](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Random_Forest_preciction)
+- [Code for Random Firest model on Github (read URL](https://github.com/theonlyduck/Machine-Learning/blob/master/Project_C_Randon_Forest_prediction_2) 
 
 # Project D: 
 Through this project I learned how to implement, test, and evaluate **multiple ML algorithms** at the same time.
